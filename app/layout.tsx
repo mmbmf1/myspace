@@ -3,8 +3,8 @@ import './globals.css'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Myspace',
-  description: 'fireship practice app',
+  title: 'Nextspace',
+  description: 'an application for the next available space',
 }
 
 export default function RootLayout({
