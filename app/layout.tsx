@@ -5,6 +5,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Nextspace',
   description: 'an application for the next available space',
+  authors: [{ name: 'mmbmf1' }],
 }
 
 export default function RootLayout({
