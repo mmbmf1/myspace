@@ -1,3 +1,6 @@
+import { getServerSession } from 'next-auth'
+import { redirect } from 'next/navigation'
+
 interface Post {
   title: string
   content: string
@@ -17,6 +20,12 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPostPage({ params }: Props) {
+  const session = await getServerSession()
+
+  if (!session) {
+    redirect(`/api/auth/signin`)
+  }
+
   const posts: Post[] = await fetch('http://localhost:3000/api/content').then(
     (res) => res.json()
   )
