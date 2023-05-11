@@ -1,3 +1,4 @@
+import AuthProvider from './AuthProvider'
 import NavMenu from './NavMenu'
 import './globals.css'
 import { Metadata } from 'next'
@@ -14,11 +15,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="p-8">
-        <NavMenu />
-        {children}
-      </body>
-    </html>
+    <AuthProvider>
+      <html lang="en">
+        <body className="p-8">
+          <NavMenu />
+          {children}
+        </body>
+      </html>
+    </AuthProvider>
   )
 }

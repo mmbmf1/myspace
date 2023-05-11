@@ -19,8 +19,11 @@ const posts = [
   },
 ]
 
+import { getServerSession } from 'next-auth'
 import { NextResponse } from 'next/server'
 
-export function GET() {
+export async function GET() {
+  const session = await getServerSession()
+  console.log('👀 🔍 ~ file: route.tsx:27 ~ GET ~ session:', session)
   return NextResponse.json(posts)
 }
