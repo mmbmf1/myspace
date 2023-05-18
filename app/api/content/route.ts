@@ -24,6 +24,5 @@ import { NextResponse } from 'next/server'
 
 export async function GET() {
   const session = await getServerSession()
-  console.log('👀 🔍 ~ file: route.tsx:27 ~ GET ~ session:', session)
   return NextResponse.json(posts)
 }
