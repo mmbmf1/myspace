@@ -8,9 +8,6 @@ type Props = {
 
 export default function AuthCheck({ children }: Props) {
   const { data: session, status } = useSession()
-  console.log('👀 🔍 ~ file: AuthCheck.tsx:11 ~ AuthCheck ~ status:', status)
-  console.log('👀 🔍 ~ file: AuthCheck.tsx:11 ~ AuthCheck ~ session:', session)
-
   if (status === 'authenticated') {
     return <>{children}</>
   } else {
