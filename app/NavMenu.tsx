@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { SignInButton, SignOutButton } from '../components/buttons'
-import AuthCheck from '../components/AuthCheck'
+import { SignInButton, SignOutButton } from '@/components/buttons'
+import AuthCheck from '@/components/AuthCheck'
 
 const linkStyles = 'flex items-center pr-6 hover:underline'
 
