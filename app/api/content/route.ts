@@ -21,8 +21,10 @@ const posts = [
 
 import { getServerSession } from 'next-auth'
 import { NextResponse } from 'next/server'
+import { authOptions } from "../../api/auth/[...nextauth]/route"
+
 
 export async function GET() {
-  const session = await getServerSession()
+  const session = await getServerSession(authOptions)
   return NextResponse.json(posts)
 }

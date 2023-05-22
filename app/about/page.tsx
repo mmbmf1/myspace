@@ -17,8 +17,12 @@ export default async function About() {
 
   return (
     <main className="p-10">
-      <h1>About</h1>
-      <p>We are a social media company that is bring people together</p>
+      <h1 className="text-2xl">About</h1>
+      <p>This company is trash, I honestly wouldnt sign up</p>
+      <img
+        src="https://media.giphy.com/media/5i2OfQ3g9bOSc4XWBG/giphy.gif"
+        alt="dumpster fire"
+      />
     </main>
   )
 }
