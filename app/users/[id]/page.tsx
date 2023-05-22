@@ -1,5 +1,8 @@
 import { prisma } from '@/lib/prisma'
 import { Metadata } from 'next'
+import { getServerSession } from 'next-auth'
+import { redirect } from 'next/navigation'
+import { authOptions } from '../../api/auth/[...nextauth]/route'
 
 interface Props {
   params: {
@@ -12,6 +15,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function UserProfile({ params }: Props) {
+  const session = await getServerSession(authOptions)
+
+  if (!session) {
+    redirect(`/api/auth/signin`)
+  }
   const user = await prisma.user.findUnique({ where: { id: params.id } })
   const { name, bio, image, age } = user ?? {}
 

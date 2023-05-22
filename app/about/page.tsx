@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 }
 
 export default async function About() {
-  const session = await getServerSession(authOptions)
+  // const session = await getServerSession(authOptions)
 
-  if (!session) {
-    redirect(`/api/auth/signin`)
-  }
+  // if (!session) {
+  //   redirect(`/api/auth/signin`)
+  // }
 
   return (
     <main className="p-10">
