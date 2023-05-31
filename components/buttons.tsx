@@ -19,6 +19,7 @@ export function SignInButton() {
           width={32}
           height={32}
           alt="Your name"
+          className="mr-2"
         />
       </Link>
     )
@@ -31,9 +32,5 @@ export function SignInButton() {
 }
 
 export function SignOutButton() {
-  return (
-    <button className="m-1" onClick={() => signOut()}>
-      Sign out
-    </button>
-  )
+  return <button onClick={() => signOut()}>Sign out</button>
 }

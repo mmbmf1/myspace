@@ -8,7 +8,7 @@ const linkStyles = 'flex items-center pr-6 hover:underline'
 export default function NavMenu() {
   return (
     <nav className="flex justify-between items-center bg-blue-700 px-1 py-5 rounded-md">
-      <Link className="p-2" href="/">
+      <Link className="p-2 " href="/">
         <Image src="/logo.svg" alt="Nextspace logo" width={216} height={30} />
       </Link>
       <ul className="flex mr-1 text-white">
@@ -18,7 +18,7 @@ export default function NavMenu() {
         <li>
           <SignInButton />
         </li>
-        <li>
+        <li className="self-center">
           <AuthCheck>
             <SignOutButton />
           </AuthCheck>
