@@ -2,7 +2,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '../api/auth/[...nextauth]/route'
 import { redirect } from 'next/navigation'
 import { prisma } from '@/lib/prisma'
-import { SignOutButton } from '@/components/buttons'
+// import { SignOutButton } from '@/components/buttons'
 import { ProfileForm } from './ProfileForm'
 
 export default async function Dashboard() {
@@ -20,8 +20,8 @@ export default async function Dashboard() {
 
   return (
     <>
-      <h1 className="text-2xl">Dashboard</h1>
-      <SignOutButton />
+      <h1 className="text-3xl mt-4">Dashboard</h1>
+      {/* <SignOutButton /> */}
       <ProfileForm user={user} />
     </>
   )
