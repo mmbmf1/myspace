@@ -23,6 +23,9 @@ export default async function UserProfile({ params }: Props) {
   }
   const user = await prisma.user.findUnique({ where: { id: params.id } })
   const { name, bio, image, age } = user ?? {}
+  const followCount: number = await prisma.follows.count({
+    where: { followingId: user?.id! },
+  })
 
   return (
     <div className="mt-10 flex">
@@ -36,6 +39,7 @@ export default async function UserProfile({ params }: Props) {
       <div className="ml-8">
         <h1 className="font-bold text-2xl">{name}</h1>
         <h2>Age: {age}</h2>
+        <p>Follows: {followCount}</p>
         <h3 className="mt-2 font-bold text-xl">Bio</h3>
         <p>{bio ?? 'Unknown'}</p>
         {/* @ts-expect-error Server Component */}

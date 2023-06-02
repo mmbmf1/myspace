@@ -5,7 +5,16 @@ import UserCard from '@/components/UserCard'
 
 export default async function Users() {
   const session = await getServerSession(authOptions)
-  const users = await prisma.user.findMany()
+  const users = await prisma.user.findMany({
+    include: {
+      _count: {
+        select: {
+          followedBy: true,
+          following: true,
+        },
+      },
+    },
+  })
 
   await prisma.$disconnect()
 
