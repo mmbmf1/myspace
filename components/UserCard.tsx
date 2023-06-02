@@ -5,7 +5,7 @@ interface Props {
   name: string | null
   age: number | null
   image: string | null
-  _count: { followedBy: number } | null
+  _count: { followedBy: number; following: number } | null
 }
 
 export default function UserCard({ id, name, age, image, _count }: Props) {
@@ -25,7 +25,10 @@ export default function UserCard({ id, name, age, image, _count }: Props) {
           {age ?? 'Unknown'}
         </p>
         <p className="text-xs">
-          <strong>Followers:</strong> {_count!.followedBy}
+          <strong>Followers:</strong> {_count?.followedBy}
+        </p>
+        <p className="text-xs">
+          <strong>Following:</strong> {_count?.following}
         </p>
       </div>
     </div>
