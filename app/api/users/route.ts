@@ -2,8 +2,9 @@ import { prisma } from '../../../lib/prisma'
 import { NextResponse } from 'next/server'
 
 export async function GET(request: Request) {
-    
-    const users = await prisma.user.findMany()
+  const users = await prisma.user.findMany()
 
-    return NextResponse.json(users)
+  await prisma.$disconnect()
+
+  return NextResponse.json(users)
 }

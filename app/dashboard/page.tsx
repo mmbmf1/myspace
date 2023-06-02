@@ -18,6 +18,8 @@ export default async function Dashboard() {
     },
   })
 
+  await prisma.$disconnect()
+
   return (
     <>
       <h1 className="text-3xl mt-4">Dashboard</h1>

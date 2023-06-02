@@ -53,7 +53,7 @@ export function ProfileForm({ user }: any) {
           type="text"
           name="age"
           defaultValue={user?.age ?? 0}
-          className="mb-2 text-gray-600"
+          className="mb-2 text-gray-600 border border-gray-300 rounded-md p-1"
         />
         <label htmlFor="image" className="block text-lg">
           Profile Image URL

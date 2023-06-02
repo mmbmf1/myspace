@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
 import { authOptions } from '../../api/auth/[...nextauth]/route'
+import FollowButton from '@/components/FollowButton/FollowButton'
 
 interface Props {
   params: {
@@ -25,16 +26,20 @@ export default async function UserProfile({ params }: Props) {
 
   return (
     <div className="mt-10 flex">
-      <img
-        src={image ?? '/mememan/webp'}
-        alt={`${name}'s profile`}
-        className="w-64 h-64"
-      />
+      <div>
+        <img
+          src={image ?? '/mememan/webp'}
+          alt={`${name}'s profile`}
+          className="w-64 h-64 rounded-md"
+        />
+      </div>
       <div className="ml-8">
         <h1 className="font-bold text-2xl">{name}</h1>
-        <h2>{age}</h2>
+        <h2>Age: {age}</h2>
         <h3 className="mt-2 font-bold text-xl">Bio</h3>
         <p>{bio ?? 'Unknown'}</p>
+        {/* @ts-expect-error Server Component */}
+        <FollowButton targetUserId={params.id} />
       </div>
     </div>
   )
