@@ -5,7 +5,10 @@ interface Props {
   name: string | null
   age: number | null
   image: string | null
-  _count: { followedBy: number; following: number } | null
+  _count: {
+    followedBy: number
+    following: number
+  } | null
 }
 
 export default function UserCard({ id, name, age, image, _count }: Props) {
